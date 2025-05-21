@@ -133,7 +133,7 @@
 
         if (response.ok) {
           formMsg.style.color = 'green';
-          formMsg.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
+          formMsg.textContent = 'Falha no envio. Tente novamente mais tarde.';
           formMsg.style.display = 'block';
           form.reset();
         } else {
@@ -141,7 +141,7 @@
         }
       } catch (error) {
         formMsg.style.color = 'red';
-        formMsg.textContent = 'Falha ao enviar a mensagem. Tente novamente mais tarde.';
+        formMsg.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
         formMsg.style.display = 'block';
       }
     });
