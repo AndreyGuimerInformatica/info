@@ -101,6 +101,7 @@
 
           <button type="submit">Enviar Mensagem</button>
         </form>
+        <div id="form-msg" style="margin-top:1rem; color: green; display:none;"></div>
       </div>
     </section>
   </main>
@@ -111,7 +112,39 @@
     </div>
   </footer>
 
-  <!-- Link para o JS -->
-  <script src="script.js"></script>
+  <!-- Script para envio via fetch AJAX -->
+  <script>
+    const form = document.getElementById('form-contato');
+    const formMsg = document.getElementById('form-msg');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formMsg.style.color = 'green';
+          formMsg.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
+          formMsg.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Erro ao enviar a mensagem');
+        }
+      } catch (error) {
+        formMsg.style.color = 'red';
+        formMsg.textContent = 'Falha ao enviar a mensagem. Tente novamente mais tarde.';
+        formMsg.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
