@@ -136,14 +136,7 @@
           formMsg.style.color = 'green';
           formMsg.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
           formMsg.style.display = 'block';
-          form.reset();
-        } else {
-          throw new Error('Erro ao enviar a mensagem');
-        }
-      } catch (error) {
-        formMsg.style.color = 'red';
-        formMsg.textContent = 'Falha ao enviar a mensagem. Tente novamente mais tarde.';
-        formMsg.style.display = 'block';
+          form.reset() 
       }
     });
   </script>
