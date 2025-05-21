@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AndreyGuimer Informática</title>
+
+  <!-- Link para CSS -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <img src="logo.png" alt="Logo AndreyGuimer Informática" class="logo" />
+      
+      <nav class="navbar">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#dicas">Dicas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <div id="relogio" class="relogio"></div>
+        <button id="btn-tema" aria-label="Trocar tema"></button>
+        <a href="https://www.instagram.com/andreyguimerinfo/" target="_blank" class="btn-instagram" aria-label="Instagram AndreyGuimer Informática">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm4.25 3.75a4 4 0 110 8 4 4 0 010-8zm0 1.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm4.5-.25a1 1 0 110 2 1 1 0 010-2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="section home">
+      <div class="container">
+        <h1>Bem-vindo à AndreyGuimer Informática</h1>
+        <p>Seu parceiro de confiança em manutenção, formatação e suporte técnico em computadores.</p>
+      </div>
+    </section>
+
+    <section id="sobre" class="section sobre">
+      <div class="container">
+        <h2>Sobre Nós</h2>
+        <p>
+          Fundada por Andrey Guilherme, a AndreyGuimer Informática oferece serviços especializados em montagem de computadores, manutenções, limpezas
+          para deixar seu computador rápido, seguro e funcionando perfeitamente.
+          Nossa missão é entregar qualidade com atendimento personalizado.
+        </p>
+      </div>
+    </section>
+
+    <section id="servicos" class="section servicos">
+      <div class="container">
+        <h2>Serviços</h2>
+        <ul>
+          <li>Formatação e reinstalação de sistema operacional</li>
+          <li>Limpeza preventiva e remoção de vírus</li>
+          <li>Backups</li>
+          <li>Montagem de Desktops e upgrade de computadores</li>
+          <li>Instalação de pacote Office</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="dicas" class="section dicas">
+      <div class="container">
+        <h2>Dicas de Informática</h2>
+        <ul>
+          <li>💡 Use um antivírus confiável e mantenha-o atualizado.</li>
+          <li>🧹 Faça limpeza de arquivos temporários com frequência.</li>
+          <li>🔌 Evite desligar o PC forçadamente para prevenir danos.</li>
+          <li>📦 Sempre tenha backup dos seus arquivos importantes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contato" class="section contato">
+      <div class="container">
+        <h2>Contato</h2>
+        <form id="form-contato" novalidate>
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required placeholder="Seu nome completo" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="seu@email.com" />
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 AndreyGuimer Informática. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Link para o JS -->
+  <script src="script.js"></script>
+</body>
+</html>

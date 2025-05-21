@@ -1,0 +1,439 @@
+/* Cores principais do projeto */
+:root {
+  --vermelho: #e63946;
+  --azul: #1d3557;
+  --laranja: #f4a261;
+  --verde: #2a9d8f;
+  --branco: #ffffff;
+  --cinza-claro: #f7f9fc;
+  --cinza-escuro: #444444;
+  --sombra: rgba(0, 0, 0, 0.15);
+  --font-family: 'Roboto', sans-serif;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container centralizado e com espaçamento lateral */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header estilizado */
+header {
+  background-color: var(--vermelho);
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px var(--sombra);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  height: 60px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px var(--sombra);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--branco);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.navbar a:hover,
+.navbar a:focus {
+  background-color: var(--laranja);
+  color: var(--azul);
+  outline: none;
+}
+
+/* Header right (relogio, botão tema, instagram) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Relógio */
+.relogio {
+  color: var(--branco);
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: monospace;
+  background-color: rgba(255 255 255 / 0.15);
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--sombra);
+  min-width: 90px;
+  text-align: center;
+}
+
+/* Botão tema */
+#btn-tema {
+  background-color: var(--azul);
+  color: var(--branco);
+  font-weight: 700;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px var(--sombra);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+#btn-tema:hover,
+#btn-tema:focus {
+  background-color: var(--verde);
+  outline: none;
+}
+
+/* Botão Instagram */
+.btn-instagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px var(--sombra);
+  transition: transform 0.3s ease;
+}
+.btn-instagram:hover,
+.btn-instagram:focus {
+  transform: scale(1.15);
+  outline: none;
+}
+
+/* Main sections */
+.section {
+  padding: 3.5rem 1rem 4rem;
+  margin-top: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px var(--sombra);
+  background-color: var(--branco);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-8px);
+}
+
+.home {
+  background: linear-gradient(135deg, var(--verde), var(--azul));
+  color: var(--branco);
+  text-align: left;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  padding: 4rem 2rem;
+}
+
+.home h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 900;
+  text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.5);
+}
+
+.home p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.35);
+}
+
+.sobre h2,
+.servicos h2,
+.contato h2 {
+  color: var(--vermelho);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+/* Título vermelho igual para a seção Dicas de Informática */
+.section.dicas h2 {
+  color: var(--vermelho);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.sobre p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--cinza-escuro);
+}
+
+.servicos ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  font-size: 1.1rem;
+  color: var(--cinza-escuro);
+}
+.servicos li {
+  margin-bottom: 0.7rem;
+  position: relative;
+  padding-left: 1.6rem;
+}
+.servicos li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: var(--verde);
+  font-weight: 700;
+  font-size: 1.2rem;
+  top: 0;
+}
+
+/* Formulário contato */
+form {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+label {
+  font-weight: 700;
+  color: var(--vermelho);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: 2px solid var(--cinza-claro);
+  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
+  transition: border-color 0.3s ease;
+  resize: vertical;
+  font-family: var(--font-family);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--vermelho);
+  outline: none;
+  box-shadow: 0 0 8px var(--vermelho);
+}
+
+button[type="submit"] {
+  background-color: var(--vermelho);
+  color: var(--branco);
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 18px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px var(--sombra);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: var(--laranja);
+  outline: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--azul);
+  color: var(--branco);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: auto;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  box-shadow: 0 -2px 6px var(--sombra);
+}
+
+/* Responsividade simples */
+@media (max-width: 768px) {
+  .header-container {
+    justify-content: center;
+    gap: 0.7rem;
+  }
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .header-right {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  .section {
+    padding: 2rem 1rem 3rem;
+  }
+  .home h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ========================== */
+/* Tema escuro - ajustes cores */
+/* ========================== */
+
+body.tema-escuro {
+  background-color: var(--azul);
+  color: var(--cinza-claro);
+}
+
+body.tema-escuro header {
+  background-color: var(--verde);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+body.tema-escuro .section {
+  background-color: #1f2937; /* tom escuro para as seções */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+  color: var(--cinza-claro);
+}
+
+body.tema-escuro .home {
+  background: linear-gradient(135deg, var(--laranja), var(--vermelho));
+  color: var(--branco);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
+
+body.tema-escuro .sobre p,
+body.tema-escuro .servicos ul,
+body.tema-escuro .servicos li {
+  color: var(--cinza-claro);
+}
+
+body.tema-escuro label {
+  color: var(--laranja);
+}
+
+body.tema-escuro a {
+  color: var(--laranja);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+body.tema-escuro a:hover,
+body.tema-escuro a:focus {
+  color: var(--verde);
+  outline: none;
+}
+
+body.tema-escuro .servicos li::before {
+  color: var(--laranja);
+}
+
+body.tema-escuro input[type="text"],
+body.tema-escuro input[type="email"],
+body.tema-escuro textarea {
+  background-color: #374151;
+  border-color: var(--laranja);
+  color: var(--cinza-claro);
+  box-shadow: inset 1px 1px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.tema-escuro input[type="text"]:focus,
+body.tema-escuro input[type="email"]:focus,
+body.tema-escuro textarea:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 8px var(--verde);
+  outline: none;
+}
+
+body.tema-escuro button[type="submit"] {
+  background-color: var(--laranja);
+  color: var(--azul);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+body.tema-escuro button[type="submit"]:hover,
+body.tema-escuro button[type="submit"]:focus {
+  background-color: var(--verde);
+  color: var(--branco);
+  outline: none;
+}
+
+body.tema-escuro .relogio {
+  background-color: rgba(255 255 255 / 0.25);
+  color: var(--azul);
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+body.tema-escuro #btn-tema {
+  background-color: var(--laranja);
+  color: var(--azul);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+body.tema-escuro #btn-tema:hover,
+body.tema-escuro #btn-tema:focus {
+  background-color: var(--verde);
+  color: var(--branco);
+  outline: none;
+}
+
+body.tema-escuro .btn-instagram {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  filter: brightness(0.9);
+}
+
+/* Forçando cor branca em textos que ficaram escuros */
+body.tema-escuro,
+body.tema-escuro p,
+body.tema-escuro li,
+body.tema-escuro label,
+body.tema-escuro h1,
+body.tema-escuro h2,
+body.tema-escuro h3,
+body.tema-escuro h4,
+body.tema-escuro h5,
+body.tema-escuro h6,
+body.tema-escuro a {
+  color: var(--cinza-claro) !important;
+}
