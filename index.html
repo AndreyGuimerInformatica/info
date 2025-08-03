@@ -84,7 +84,7 @@
     <section id="contato" class="section contato">
       <div class="container">
         <h2>Contato</h2>
-        <form id="form-contato" action="https://formspree.io/f/xpwljbeb" method="POST">
+        <form action="https://formsubmit.co/andreyguimerinformatica@gmail.com" method="POST" />
           <label for="nome">Nome:</label>
           <input type="text" id="nome" name="nome" required placeholder="Seu nome completo" />
 
@@ -94,10 +94,7 @@
           <label for="mensagem">Mensagem:</label>
           <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
 
-          <!-- Anti-spam: campo invisível -->
-          <input type="text" name="_gotcha" style="display:none">
-
-          <!-- Desativa o captcha padrão -->
+          <!-- Anti-spam: campo oculto -->
           <input type="hidden" name="_captcha" value="false" />
 
           <button type="submit">Enviar Mensagem</button>
@@ -122,7 +119,7 @@
       event.preventDefault();
 
       const formData = new FormData(form);
-
+      
       try {
         const response = await fetch(form.action, {
           method: 'POST',
@@ -134,15 +131,15 @@
 
         if (response.ok) {
           formMsg.style.color = 'green';
-          formMsg.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
+          formMsg.textContent = 'Falha no envio. Tente novamente mais tarde.';
           formMsg.style.display = 'block';
           form.reset();
         } else {
-          throw new Error('Erro ao enviar');
+          throw new Error('Erro ao enviar a mensagem');
         }
       } catch (error) {
         formMsg.style.color = 'red';
-        formMsg.textContent = 'Falha no envio. Tente novamente mais tarde.';
+        formMsg.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
         formMsg.style.display = 'block';
       }
     });
